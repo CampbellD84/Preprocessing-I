@@ -108,7 +108,7 @@ body {
 }
 
 .h3-margin-top(@space) {
-	margin-top: @space;
+	margin-bottom: @space;
 }
 
 .contact-inputs(@display) {
@@ -125,6 +125,7 @@ body {
 		  .center(space-around, center);
 		  a {
 			  text-decoration: none;
+			  color: #000;
 		  }
 	  }
   }
@@ -169,6 +170,17 @@ body {
 			flex-wrap: wrap;
 			margin: 0.5rem 7.5rem 0 0;
 			padding: 0.5rem 1rem;
+
+			.fe-skill h3 {
+				.h3-margin-top(1rem);
+			}
+			.fe-tool h3 {
+				.h3-margin-top(1rem);
+			}
+
+			.be-skill h3 {
+				.h3-margin-top(1rem);
+			}
 		}
 
 		.listskill-fe {
@@ -178,8 +190,39 @@ body {
 		
 		ul {
 			margin-top: 0.5rem 0;
-			li {
-				list-style-type: disc;
+		}
+
+		.work-history {
+			margin: 0.5rem;
+			padding: 1rem;
+
+			h2 {
+				margin-bottom: 1rem;
+			}
+			.worktable {
+				width: 100%;
+				border-collapse: collapse;
+				font-size: 1.6rem;
+				th {
+					font-weight: bold;
+					text-align: left;
+				}
+				td, th {
+					display: table-cell;
+					vertical-align: inherit;
+					padding: 0.5rem;
+				}
+				td {
+					text-align: left;
+				}
+				&:th, &:td {
+					padding: 1.5rem;
+				}
+				thead th {
+					background-color: @mimosa;
+					color: #000;
+					text-transform: uppercase;
+				}
 			}
 		}
 
