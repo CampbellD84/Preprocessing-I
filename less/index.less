@@ -57,3 +57,177 @@ html, body {
     height: 100%;
 }
 
+//  Font
+
+@import url('https://rsms.me/inter/inter.css');
+
+html { 
+	font-family: 'Inter', sans-serif;
+	font-size: 62.5%;
+}
+
+@supports (font-variation-settings: normal) {
+	html { font-family: 'Inter var', sans-serif; }
+  }
+
+
+body {
+	font-size: 1.6rem;
+}
+
+//  Variables
+
+@h1: 3.2rem;
+@h2: 2.4rem;
+@h3: 1.8rem;
+
+@emerald: #149372;
+@ultraviolet: #604d8d;
+@mimosa: #EFBF62;
+@chilli: #991F34;
+@blueiris: #5A5C9C;
+
+
+// Mixins
+
+.center(@justify, @align){
+	display: flex;
+	justify-content: @justify;
+	align-items: @align;
+}
+
+.heading-size(@size, @weight){
+	font-size: @size;
+	font-weight: @weight;
+}
+
+.cta(@cta-size, @cta-weight, @cta-align) {
+	font-size: @cta-size;
+	font-weight: @cta-weight;
+	text-align: @cta-align;
+}
+
+.h3-margin-top(@space) {
+	margin-top: @space;
+}
+
+.contact-inputs(@display) {
+	display: @display;
+} 
+
+// Styles
+	
+  .container {
+	  width: 80rem;
+	  margin: 0 auto;
+
+	  header nav {
+		  .center(space-around, center);
+		  a {
+			  text-decoration: none;
+		  }
+	  }
+  }
+
+  main {
+		h1 {
+			.heading-size(@h1, bold);
+		}
+
+		h2 {
+			.heading-size(@h2, bold);
+		}
+
+		h3 {
+			.heading-size(@h3, bold);
+		}
+
+		.cta {
+			h1 {
+				.cta(4.8rem, bolder, center)
+			}
+
+			p {
+				.cta(3.2rem, bold, center)
+			}
+
+			margin: 2rem 1rem;
+		}
+
+		.about-me {
+			display: block;
+			margin: 0.5rem;
+			padding: 1rem;
+			h2 {
+				margin: 0.8rem 0 1rem 0;
+			}
+		}
+
+		.skillsgroup {
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			margin: 0.5rem 7.5rem 0 0;
+			padding: 0.5rem 1rem;
+		}
+
+		.listskill-fe {
+			display: flex;
+			flex-direction: row;
+		}
+		
+		ul {
+			margin-top: 0.5rem 0;
+			li {
+				list-style-type: disc;
+			}
+		}
+
+		.contact {
+			margin: 1rem;
+			form input {
+				.contact-inputs(inline-block);
+				margin: 1rem 0.8rem;
+			}
+
+			form textarea {
+				.contact-inputs(block);
+				margin: 1rem 0;
+			}
+
+			// form button {
+			// 	background-color: @emerald;
+			// 	color: #fff;
+			// 	width: 7rem;
+			// 	height: 5rem;
+			// 	border-radius: 2rem;
+			// }
+		}
+		
+
+		.faIcons {
+			.center(center, center);
+			a {
+				i {
+					font-size: 2.5rem;
+					margin: .3rem;
+					padding: .3rem;
+					color: #000
+				}
+
+				.fa-codepen {
+					color: @chilli;
+				}
+				.fa-linkedin {
+					color: @blueiris;
+				}
+				.fa-twitter {
+					color: @emerald;
+				}
+			}
+		}
+}
+  
+footer {
+  .center(center, center);
+}
